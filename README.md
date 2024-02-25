@@ -2,6 +2,6 @@
  
 Check out my mini projects in this course.
 
-- [Guess My Number Game](https://koblaq.github.io/Complete_JavaScript_Course/guess_my_number_game)
+- [Guess My Number Game](https://koblaq.github.io/Complete_JavaScript_Course/Guess_My_Number_Game)
 
-- [Modal](https://koblaq.github.io/Complete_JavaScript_Course/modal_project)
+- [Modal](https://koblaq.github.io/Complete_JavaScript_Course/Modal_Project)
