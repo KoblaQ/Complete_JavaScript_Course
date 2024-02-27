@@ -80,7 +80,7 @@ console.log(x === window.x);
 console.log(y === window.y);
 console.log(z === window.z);
 
-*/
+
 
 console.log(this);
 
@@ -116,3 +116,69 @@ matilda.calcAge = edem.calcAge;
 
 const f = edem.calcAge;
 f();
+
+
+
+var firstName = 'Kobla';
+const edem = {
+  firstName: 'Edem',
+  year: 1991,
+  calcAge: function () {
+    // console.log(this);
+    console.log(2037 - this.year);
+    // Solution 1
+    // const self = this; // Self or that
+    // const isMillenial = function () {
+    //   console.log(self);
+    //   console.log(self.year >= 1981 && self.year <= 1996);
+    // };
+
+    // Solution 2
+    const isMillenial = () => {
+      console.log(this);
+      console.log(this.year >= 1981 && this.year <= 1996);
+    };
+
+    isMillenial();
+  },
+
+  greet: function () {
+    console.log(this);
+    console.log(`Hey ${this.firstName}`);
+  },
+};
+
+edem.greet();
+edem.calcAge();
+
+// arguments keyword
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr(2, 5);
+addExpr(2, 5, 8, 12);
+
+var addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+addArrow(2, 5, 8);
+*/
+
+let age = 30;
+let oldAge = age;
+age = 31;
+
+console.log(age);
+console.log(oldAge);
+
+const me = {
+  name: 'Edem',
+  age: 30,
+};
+
+const friend = me;
+friend.age = 27;
+console.log('Friend: ', friend);
+console.log('Me', me);
