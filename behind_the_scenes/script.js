@@ -164,7 +164,7 @@ var addArrow = (a, b) => {
   return a + b;
 };
 addArrow(2, 5, 8);
-*/
+
 
 let age = 30;
 let oldAge = age;
@@ -182,3 +182,43 @@ const friend = me;
 friend.age = 27;
 console.log('Friend: ', friend);
 console.log('Me', me);
+*/
+
+// Primitive types
+let lastName = 'Quashigah';
+let oldLastName = lastName;
+lastName = 'Kobla';
+console.log(lastName, oldLastName);
+
+// Reference types
+const jessica = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+};
+
+const marriedJessica = jessica;
+marriedJessica.lastName = 'Quashigah';
+console.log('Before marriage: ', jessica);
+console.log('After marriage: ', marriedJessica);
+
+// marriedJessica = {}; // This won't work because it is a const and therefore can't be changed.
+
+// Copying objects
+const jessica2 = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['Alice', 'Bob'],
+};
+
+const jessicaCopy = Object.assign({}, jessica2); // Shallow cloning ( Does not clone the inner objects only the surface level)
+jessicaCopy.lastName = 'Quashigah';
+console.log('Before marriage: ', jessica2);
+console.log('After marriage: ', jessicaCopy);
+
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('John');
+
+console.log('Before marriage: ', jessica2);
+console.log('After marriage: ', jessicaCopy); // Objects (eg. family array) within such objects don't change with the object.assign shallow cloning.
