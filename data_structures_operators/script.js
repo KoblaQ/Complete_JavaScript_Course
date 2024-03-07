@@ -64,6 +64,22 @@ const rest2 = {
   owner: 'Giovanni Rossi',
 };
 
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+// OLD FASHIONED WAY
+// for (const item of menu.entries()) {
+//   console.log(`${item[0] + 1}: ${item[1]}`);
+// }
+
+// Using destructuring to make it easier
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+// console.log([...menu.entries()]);
+
 /*
 
 // OR assignment operator
@@ -364,6 +380,8 @@ GOOD LUCK 😀
 */
 
 /*
+////////////////////////
+// CODING CHALLENGE ATTEMPT
 const players1 = [game.players[0]];
 console.log(players1);
 const players2 = [game.players[1]];
@@ -405,6 +423,7 @@ const team2 = game.odds.team2;
 console.log(team2);
 */
 
+/*
 //1.
 const [players1, players2] = game.players;
 console.log(players1, players2);
@@ -437,3 +456,4 @@ printGoals(...game.scored);
 // 7.
 team1 < team2 && console.log('Team 1 is more likely to win');
 team1 > team2 && console.log('Team 2 is more likely to win');
+*/
