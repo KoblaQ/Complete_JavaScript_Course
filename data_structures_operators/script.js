@@ -73,8 +73,47 @@ const restaurant = {
   },
 };
 
-/*
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
 
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B737'[0]);
+
+console.log(airline.length);
+console.log('B737'.length);
+
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('portugal')); // -1 because it is not found p should be P
+
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  // B and E are Middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('You got the middle seat😬');
+  else console.log('You got lucky 😎');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+console.log(new String('Edem'));
+console.log(typeof new String('Edem'));
+
+console.log(typeof new String('Edem').slice(1));
+
+/*
 const question = new Map([
   ['question', 'What is the best programming language in the world?'],
   [1, 'C'],
@@ -532,6 +571,7 @@ Let's continue with our football betting app! This time, we have a map with a lo
 GOOD LUCK 😀
 */
 
+/*
 const gameEvents = new Map([
   [17, '⚽️ GOAL'],
   [36, '🔁 Substitution'],
@@ -569,6 +609,7 @@ for (const [key, value] of gameEvents) {
   const half = key <= 45 ? 'FIRST' : 'SECOND';
   console.log(`[${half} HALF] ${key}: ${value}`);
 }
+*/
 
 /*
 // CHALLENGE 2
