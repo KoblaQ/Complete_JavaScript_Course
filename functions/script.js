@@ -101,6 +101,11 @@ document.body.addEventListener('click', high5);
 
 ['Edem', 'Martha', 'Adam'].forEach(high5);
 */
+
+/*
+/////////////////
+// FUNCTIONS RETURNING FUNCTIONS.
+
 const greet = function (greeting) {
   return function (name) {
     console.log(`${greeting} ${name}`);
@@ -112,7 +117,60 @@ greeterHey('Kobla');
 
 greet('Hello')('Edem ');
 
-// Challenge
+// Challenge (replicate the above function in an arrow function format)
 const greetArrow = greeting => name => console.log(`${greeting} ${name}`);
 
 greetArrow('Hi')('Edem');
+*/
+
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  // book: function() {},
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
+};
+
+lufthansa.book(239, 'Edem Quashigah');
+lufthansa.book(656, 'Kobla Q');
+console.log(lufthansa);
+
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+const book = lufthansa.book;
+
+// DOES NOT WORK
+// book(23, 'Sarah Williams');
+
+// CALL METHOD
+book.call(eurowings, 23, 'Sarah Williams');
+console.log(eurowings);
+
+book.call(lufthansa, 239, 'Mary Cooper');
+console.log(lufthansa);
+
+const swiss = {
+  airline: 'Swiss Air Lines',
+  iataCode: 'LX',
+  bookings: [],
+};
+
+book.call(swiss, 'Mary Cooper');
+console.log(swiss);
+
+// Apply Method (Does the same as call except it uses an array instead) - It's old fashioned tho.
+const flightData = [583, 'George Cooper'];
+book.apply(swiss, flightData);
+console.log(swiss);
+
+// New way of doing it
+book.call(swiss, ...flightData);
