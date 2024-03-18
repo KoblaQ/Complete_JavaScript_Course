@@ -254,7 +254,7 @@ BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
 
 GOOD LUCK 😀
 */
-
+/*
 const poll = {
   question: 'What is your favourite programming language?',
   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
@@ -299,3 +299,18 @@ document
 poll.displayResults.call({ answers: [5, 2, 3] }, 'string');
 poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, 'string');
 poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
+*/
+
+const runOnce = function () {
+  console.log('This will never run again');
+};
+runOnce();
+
+// IIFE - Immediately Invoked Function Expression.
+(function () {
+  console.log('This will never run again');
+  const isPrivate = 23;
+})();
+
+// console.log(isPrivate);
+(() => console.log('This will ALSO never run again'))();
